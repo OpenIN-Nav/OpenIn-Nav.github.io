@@ -89,7 +89,102 @@
       padding: 0;
       margin: 0; !important;
     }
-    
+     .scene-container {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .scene-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, #3498db, #2ecc71);
+        }
+        
+        .scene-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .scene-title {
+            font-size: 28px;
+            color: #2c3e50;
+            font-weight: 700;
+        }
+        
+        .scene-stats {
+            background: #3498db;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 16px;
+        }
+        
+        .scene-content {
+            line-height: 1.8;
+            font-size: 18px;
+            color: #34495e;
+        }
+        
+        .scene-item {
+            padding: 10px 15px;
+            margin: 8px 0;
+            border-radius: 8px;
+            background-color: #f8f9fa;
+            transition: all 0.3s ease;
+            position: relative;
+            padding-left: 35px;
+        }
+        
+        .scene-item:hover {
+            background-color: #e3f2fd;
+            transform: translateX(5px);
+        }
+        
+        .scene-item::before {
+            content: '•';
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #3498db;
+            font-size: 24px;
+        }
+        
+        .action-item {
+            border-left: 3px solid #3498db;
+        }
+        
+        .object-item {
+            border-left: 3px solid #2ecc71;
+        }
+        
+        .location-item {
+            border-left: 3px solid #9b59b6;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 25px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
     hr {
       background-color: lightgray;!important;
     }
@@ -297,19 +392,27 @@
         <h4 class="title is-5">1.1 Object Query on the Outdated Offline Map (instance, demand, and carried-by relationship)</h4>
           <img id="teaser4" src="./static/images/scene1-1-.png" alt="teaser">
           <h2 class="subtitle has-text-centered">
-            <p>
-              <pre>
-              Other 11 instructions in scene 1: 
-              towel
-              I want to sit
-              green box
-              a black book on bed
-              I want to sleep
-              I need to use the toilet
-              black mug
-              a blue box on bed
-              </pre>
-            </p>
+            <div class="scene-container">
+        <div class="scene-header">
+            <h1 class="scene-title">场景1</h1>
+            <div class="scene-stats">total: 14-6</div>
+        </div>
+        
+        <div class="scene-content">
+            <div class="scene-item object-item">towel</div>
+            <div class="scene-item action-item">I want to sit</div>
+            <div class="scene-item object-item">green box</div>
+            <div class="scene-item location-item">a black book on bed</div>
+            <div class="scene-item action-item">I want to sleep</div>
+            <div class="scene-item action-item">I need to use the toilet</div>
+            <div class="scene-item object-item">black mug</div>
+            <div class="scene-item location-item">a blue box on bed</div>
+        </div>
+        
+        <div class="footer">
+            场景描述 | 简洁排版设计
+        </div>
+    </div>
           </h2>
           <img id="teaser5" src="./static/images/scene1-2-.png" alt="teaser">
           <h2 class="subtitle has-text-centered">
